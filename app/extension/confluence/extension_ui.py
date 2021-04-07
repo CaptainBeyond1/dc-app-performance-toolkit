@@ -46,5 +46,3 @@ def app_specific_action(webdriver, datasets):
         specific_edit_page.return_to_parent_frame();
         specific_edit_page.save_edited_page();
     measure()
-
-
