@@ -42,7 +42,6 @@ def app_specific_action(webdriver, datasets):
             page.get_element((By.ID, "summary")).click()
             actions.send_keys(''.join(random.choice(letters) for i in range(10))).perform();
             page.get_element((By.ID, "create-issue-submit")).click()
-            page.wait_until_invisible((By.ID, "create-issue-submit"))
         sub_measure()
     measure()
 
