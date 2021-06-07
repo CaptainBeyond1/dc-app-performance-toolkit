@@ -14,6 +14,7 @@ from util.conf import JIRA_SETTINGS
 def app_specific_action(webdriver, datasets):
     page = BasePage(webdriver)
     letters = string.ascii_lowercase
+    testfieldValue = ''.join(random.choice(letters) for i in range(10))
 
     @print_timing("selenium_app_specific_user_login")
     def measure():
@@ -35,7 +36,7 @@ def app_specific_action(webdriver, datasets):
         @print_timing("selenium_app_custom_action:view_issue")
         def sub_measure():
             actions = ActionChains(webdriver)
-            page.go_to_url(f"{JIRA_SETTINGS.server_url}/secure/CallViewAction.jspa?reporter=admin")
+            page.go_to_url(f"{JIRA_SETTINGS.server_url}/secure/CallViewAction.jspa?reporter=admin&testfield={testfieldValue}")
             page.wait_until_visible((By.ID, "create_link"))
             page.get_element((By.ID, "create_link")).click()
             page.wait_until_visible((By.ID, "summary"))
