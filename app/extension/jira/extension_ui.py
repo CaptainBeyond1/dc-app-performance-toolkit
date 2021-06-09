@@ -38,7 +38,7 @@ def app_specific_action(webdriver, datasets):
             page.get_element((By.ID, "currencyInput")).click()
             actions.send_keys('1').perform();
             page.get_element((By.ID, "submit-creation")).click()
-            page.findElement(By.XPATH("//a[@href='AutomatedImportsViewAction.jspa']")).click()
+            page.get_element(By.XPATH("//a[@href='AutomatedImportsViewAction.jspa']")).click()
             page.wait_until_visible((By.ID, "button-automated-import"))
             page.get_element((By.ID, "button-automated-import")).click()
         sub_measure()
