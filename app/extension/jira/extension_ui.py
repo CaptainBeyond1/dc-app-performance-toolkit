@@ -15,19 +15,16 @@ def app_specific_action(webdriver, datasets):
 
     @print_timing("selenium_app_custom_action")
     def measure():
-        @print_timing("selenium_app_custom_action:view_issue")
+        @print_timing("selenium_app_custom_action")
         def sub_measure():
             actions = ActionChains(webdriver)
             page.go_to_url(f"{JIRA_SETTINGS.server_url}/secure/CurrencyHistoryItemsViewAction.jspa")
-            webdriver.save_screenshot('beforewait.png')
             page.wait_until_visible((By.CLASS_NAME, "add-row"))
-            webdriver.save_screenshot('screenie.png')
             page.get_element((By.CLASS_NAME, "add-row")).click()
             page.wait_until_visible((By.ID, "s2id_organization-select"))
             page.get_element((By.ID, "s2id_organization-select")).click()
             actions.send_keys(Keys.ARROW_DOWN).perform()
             actions.send_keys(Keys.ENTER).perform();
-            webdriver.save_screenshot('screenie1.png')
             page.get_element((By.ID, "s2id_country-select")).click()
             actions.send_keys(Keys.ARROW_DOWN).perform()
             actions.send_keys(Keys.ENTER).perform();
@@ -35,15 +32,15 @@ def app_specific_action(webdriver, datasets):
             actions.send_keys(Keys.ARROW_DOWN).perform()
             actions.send_keys(Keys.ENTER).perform();
             page.get_element((By.ID, "s2id_toCurrency-select")).click()
-            webdriver.save_screenshot('screenie2.png')
             actions.send_keys(Keys.ARROW_DOWN).perform()
             actions.send_keys(Keys.ARROW_DOWN).perform()
             actions.send_keys(Keys.ENTER).perform();
             page.get_element((By.ID, "currencyInput")).click()
             actions.send_keys('1').perform();
-            webdriver.save_screenshot('screenie2.png')
             page.get_element((By.ID, "submit-creation")).click()
-            webdriver.save_screenshot('screenieFinal.png')
+            page.findElement(By.XPATH("//a[@href='AutomatedImportsViewAction.jspa']")).click()
+            page.wait_until_visible((By.ID, "button-automated-import"))
+            page.get_element((By.ID, "button-automated-import")).click()
         sub_measure()
     measure()
 
