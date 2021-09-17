@@ -57,7 +57,7 @@ def app_specific_action(webdriver, datasets):
             page.wait_until_visible((By.CLASS_NAME, "hr360-survey-inner-container"))
             surveys = page.get_elements((By.CLASS_NAME, "hr360-survey-inner-container"))
             surveys[0].click()
-            users = page.get_elements((By.NAME, "JIRAUSER10000"))
+            users = page.get_elements((By.NAME, "admin"))
             users[0].click()
             page.wait_until_visible((By.NAME, "1"))
             answers = page.get_elements((By.NAME, "1"))
