@@ -42,6 +42,7 @@ def app_specific_action(webdriver, datasets):
             date = page.get_element((By.ID, "survey-due-date"))
             date.send_keys('2021-11-28')
             webdriver.save_screenshot('2.png')
+            page.wait_until_visible((By.NAME, "category"))
             page.get_element((By.NAME, "category")).click()
             webdriver.save_screenshot('3.png')
             page.get_element((By.ID, "aui-uid-1")).click()
