@@ -34,5 +34,7 @@ def app_specific_action(webdriver, datasets):
             createanother.click()
             page.wait_until_visible((By.ID, 'create-another-button'))
             action.key_down(Keys.CONTROL).key_down(Keys.TAB).key_up(Keys.CONTROL).key_up(Keys.TAB).perform();
+            action.key_down(Keys.CONTROL).key_down(Keys.TAB).key_up(Keys.CONTROL).key_up(Keys.TAB).perform();
+            action.key_down(Keys.CONTROL).key_down(Keys.TAB).key_up(Keys.CONTROL).key_up(Keys.TAB).perform();
         sub_measure()
     measure()
