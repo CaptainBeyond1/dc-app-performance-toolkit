@@ -1,44 +1,50 @@
-import random
-
 from selenium.webdriver.common.by import By
 
 from selenium_ui.base_page import BasePage
 from selenium_ui.conftest import print_timing
-from selenium_ui.jira.pages.pages import Login
 from util.conf import JIRA_SETTINGS
 
 
 def app_specific_action(webdriver, datasets):
     page = BasePage(webdriver)
-    if datasets['custom_issues']:
-        issue_key = datasets['custom_issue_key']
-
-    # To run action as specific user uncomment code bellow.
-    # NOTE: If app_specific_action is running as specific user, make sure that app_specific_action is running
-    # just before test_2_selenium_z_log_out action
-    #
-    # @print_timing("selenium_app_specific_user_login")
-    # def measure():
-    #     def app_specific_user_login(username='admin', password='admin'):
-    #         login_page = Login(webdriver)
-    #         login_page.delete_all_cookies()
-    #         login_page.go_to()
-    #         login_page.set_credentials(username=username, password=password)
-    #         if login_page.is_first_login():
-    #             login_page.first_login_setup()
-    #         if login_page.is_first_login_second_page():
-    #             login_page.first_login_second_page_setup()
-    #         login_page.wait_for_page_loaded()
-    #     app_specific_user_login(username='admin', password='admin')
-    # measure()
 
     @print_timing("selenium_app_custom_action")
     def measure():
-        @print_timing("selenium_app_custom_action:view_issue")
+        @print_timing("selenium_app_custom_action:create_chart")
         def sub_measure():
-            page.go_to_url(f"{JIRA_SETTINGS.server_url}/browse/{issue_key}")
-            page.wait_until_visible((By.ID, "summary-val"))  # Wait for summary field visible
-            page.wait_until_visible((By.ID, "ID_OF_YOUR_APP_SPECIFIC_UI_ELEMENT"))  # Wait for you app-specific UI element by ID selector
+            page.go_to_url(f"{JIRA_SETTINGS.server_url}/plugins/servlet/dependencymapper")
+            page.wait_until_visible((By.ID, "jqlInput"))
+            jql = page.get_element((By.ID, "jqlInput"))
+            jql.clear()
+            jql.send_keys('project=TEST')
+            page.wait_until_visible((By.ID, "firstVizButton"))
+            page.get_element((By.ID, "firstVizButton")).click()
+            page.wait_until_visible((By.ID, "boardChart"))
+        sub_measure()
+
+        @print_timing("selenium_app_custom_action:refresh_chart")
+        def sub_measure():
+            page.wait_until_visible((By.ID, "firstVizButton"))
+            page.get_element((By.ID, "firstVizButton")).click()
+            page.wait_until_visible((By.ID, "boardChart"))
+        sub_measure()
+
+        @print_timing("selenium_app_custom_action:view_charts")
+        def sub_measure():
+            page.get_element((By.ID, "buttonDepRing")).click()
+            page.wait_until_visible((By.ID, "ringChart"))
+            page.get_element((By.ID, "buttonDepTimeline")).click()
+            page.wait_until_visible((By.ID, "timelineChart"))
+            page.get_element((By.ID, "buttonDepSankey")).click()
+            page.wait_until_visible((By.ID, "sankeyChart"))
+            page.get_element((By.ID, "buttonDepHeatmap")).click()
+            page.wait_until_visible((By.ID, "tableChart"))
+            page.get_element((By.ID, "buttonDepForce")).click()
+            page.wait_until_visible((By.ID, "forceChart"))
+            page.get_element((By.ID, "buttonDepSpider")).click()
+            page.wait_until_visible((By.ID, "spiderChart"))
+            page.get_element((By.ID, "buttonDepTimeToResolve")).click()
+            page.wait_until_visible((By.ID, "timeToResolveChart"))
         sub_measure()
     measure()
 
