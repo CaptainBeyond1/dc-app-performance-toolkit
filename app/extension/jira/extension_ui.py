@@ -38,7 +38,7 @@ def app_specific_action(webdriver, datasets):
             page.wait_until_visible((By.ID, "boardChart"))
         sub_measure()
 
-        @print_timing("selenium_app_custom_action:create_additional_charts")
+        @print_timing("selenium_app_custom_action:view_charts")
         def sub_measure():
             page.wait_until_visible((By.ID, "buttonDepRing"))
             page.get_element((By.ID, "buttonDepRing")).click()
