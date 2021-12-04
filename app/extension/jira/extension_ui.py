@@ -49,8 +49,8 @@ def app_specific_action(webdriver, datasets):
             page.wait_until_clickable((By.XPATH, '//*[@id="calendar-dd"]/div[2]/div/table/tbody/tr/td/div/div/div[2]/div[2]/table/thead/tr/td[4]'))
             date = page.get_element((By.XPATH, '//*[@id="calendar-dd"]/div[2]/div/table/tbody/tr/td/div/div/div[2]/div[2]/table/thead/tr/td[4]'))
             actions.move_to_element(date).click().perform();
-            page.wait_until_visible((By.ID, "create-calendar-issue"))
-            createbtn = page.get_element((By.ID, "create-calendar-issue"))
+            page.wait_until_visible((By.ID, "create-non-jira-event"))
+            createbtn = page.get_element((By.ID, "create-non-jira-event"))
             createbtn.click()
             page.wait_until_visible((By.ID, "summary"))
             summaryInput = page.get_element((By.ID, "summary"))
