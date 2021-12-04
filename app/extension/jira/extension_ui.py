@@ -61,8 +61,8 @@ def app_specific_action(webdriver, datasets):
 
         @print_timing("selenium_app_custom_action:create_calendar_event")
         def sub_measure():
-            page.wait_until_clickable((By.XPATH, '//*[@id="calendar-dd"]/div[2]/div/table/tbody/tr/td/div/div/div[3]/div[2]/table/thead/tr/td[7]/span'))
-            date2 = page.get_element((By.XPATH, '//*[@id="calendar-dd"]/div[2]/div/table/tbody/tr/td/div/div/div[3]/div[2]/table/thead/tr/td[7]/span'))
+            page.wait_until_clickable((By.XPATH, '//*[@id="calendar-dd"]/div[2]/div/table/tbody/tr/td/div/div/div[3]/div[2]/table/thead/tr/td[8]/span'))
+            date2 = page.get_element((By.XPATH, '//*[@id="calendar-dd"]/div[2]/div/table/tbody/tr/td/div/div/div[3]/div[2]/table/thead/tr/td[8]/span'))
             actions.move_to_element(date2).click().perform();
             page.wait_until_visible((By.ID, "create-non-jira-event"))
             createbtn = page.get_element((By.ID, "create-non-jira-event"))
