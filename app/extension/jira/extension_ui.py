@@ -46,8 +46,8 @@ def app_specific_action(webdriver, datasets):
 
         @print_timing("selenium_app_custom_action:create_entry")
         def sub_measure():
-            page.wait_until_clickable((By.XPATH, '//*[@id="calendar-dd"]/div[2]/div/table/tbody/tr/td/div/div/div[2]/div[2]/table/thead/tr/td[4]/span'))
-            date = page.get_element((By.XPATH, '//*[@id="calendar-dd"]/div[2]/div/table/tbody/tr/td/div/div/div[2]/div[2]/table/thead/tr/td[4]/span'))
+            page.wait_until_clickable((By.XPATH, '//*[@id="calendar-dd"]/div[2]/div/table/tbody/tr/td/div/div/div[2]/div[2]/table/thead/tr/td[4]'))
+            date = page.get_element((By.XPATH, '//*[@id="calendar-dd"]/div[2]/div/table/tbody/tr/td/div/div/div[2]/div[2]/table/thead/tr/td[4]'))
             actions.move_to_element(date).click().perform();
             page.wait_until_visible((By.ID, "create-calendar-issue"))
             createbtn = page.get_element((By.ID, "create-calendar-issue"))
@@ -64,8 +64,8 @@ def app_specific_action(webdriver, datasets):
 
         @print_timing("selenium_app_custom_action:create_issue_with-custom_catalog_field")
         def sub_measure():
-            page.wait_until_clickable((By.XPATH, '//*[@id="calendar-dd"]/div[2]/div/table/tbody/tr/td/div/div/div[3]/div[2]/table/thead/tr/td[7]/span'))
-            date2 = page.get_element((By.XPATH, '//*[@id="calendar-dd"]/div[2]/div/table/tbody/tr/td/div/div/div[3]/div[2]/table/thead/tr/td[7]/span'))
+            page.wait_until_clickable((By.XPATH, '//*[@id="calendar-dd"]/div[2]/div/table/tbody/tr/td/div/div/div[4]/div[2]/table/thead/tr/td[6]'))
+            date2 = page.get_element((By.XPATH, '//*[@id="calendar-dd"]/div[2]/div/table/tbody/tr/td/div/div/div[4]/div[2]/table/thead/tr/td[6]'))
             actions.move_to_element(date2).click().perform();
             page.wait_until_visible((By.ID, "create-non-jira-event"))
             createbtn = page.get_element((By.ID, "create-non-jira-event"))
