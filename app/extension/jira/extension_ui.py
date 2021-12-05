@@ -46,11 +46,12 @@ def app_specific_action(webdriver, datasets):
 
         @print_timing("selenium_app_custom_action:create_entry")
         def sub_measure():
-            page.wait_until_clickable((By.XPATH, '//*[@id="calendar-dd"]/div[2]/div/table/tbody/tr/td/div/div/div[2]/div[2]/table/thead/tr/td[4]'))
-            date = page.get_element((By.XPATH, '//*[@id="calendar-dd"]/div[2]/div/table/tbody/tr/td/div/div/div[2]/div[2]/table/thead/tr/td[4]'))
-            actions.move_to_element(date).click().perform();
-            page.wait_until_visible((By.ID, "create-non-jira-event"))
-            createbtn = page.get_element((By.ID, "create-non-jira-event"))
+            page.wait_until_visible((By.XPATH, '/html/body/div[1]/div/table/tbody/tr/td[1]/div/div[4]/div[2]/div[2]/div/table/tbody/tr/td/div/div/div[2]/div[2]/table/thead/tr/td[4]'))
+            date = page.get_element((By.XPATH, '/html/body/div[1]/div/table/tbody/tr/td[1]/div/div[4]/div[2]/div[2]/div/table/tbody/tr/td/div/div/div[2]/div[2]/table/thead/tr/td[4]'))
+            actions.move_to_element(date).perform();
+            actions.click().perform();
+            page.wait_until_visible((By.ID, "create-calendar-issue"))
+            createbtn = page.get_element((By.ID, "create-calendar-issue"))
             createbtn.click()
             page.wait_until_visible((By.ID, "summary"))
             summaryInput = page.get_element((By.ID, "summary"))
@@ -64,8 +65,8 @@ def app_specific_action(webdriver, datasets):
 
         @print_timing("selenium_app_custom_action:create_issue_with-custom_catalog_field")
         def sub_measure():
-            page.wait_until_clickable((By.XPATH, '//*[@id="calendar-dd"]/div[2]/div/table/tbody/tr/td/div/div/div[4]/div[2]/table/thead/tr/td[6]'))
-            date2 = page.get_element((By.XPATH, '//*[@id="calendar-dd"]/div[2]/div/table/tbody/tr/td/div/div/div[4]/div[2]/table/thead/tr/td[6]'))
+            page.wait_until_visible((By.XPATH, '/html/body/div[1]/div/table/tbody/tr/td[1]/div/div[4]/div[2]/div[2]/div/table/tbody/tr/td/div/div/div[2]/div[2]/table/thead/tr/td[4]'))
+            date2 = page.get_element((By.XPATH, '/html/body/div[1]/div/table/tbody/tr/td[1]/div/div[4]/div[2]/div[2]/div/table/tbody/tr/td/div/div/div[2]/div[2]/table/thead/tr/td[4]'))
             actions.move_to_element(date2).click().perform();
             page.wait_until_visible((By.ID, "create-non-jira-event"))
             createbtn = page.get_element((By.ID, "create-non-jira-event"))
