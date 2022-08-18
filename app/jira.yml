@@ -36,7 +36,7 @@ settings:
     browse_boards: 2
     standalone_extension: 11 # By default disabled
     # Custom dataset section.
-    custom_dataset_query:  project = 'KAN'
+    custom_dataset_query:  project = 'AAETAA'
 services:
   - module: shellexec
     prepare:
