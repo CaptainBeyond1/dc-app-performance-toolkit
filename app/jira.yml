@@ -5,7 +5,7 @@ settings:
   verbose: false
   check-updates: false    # disable bzt check for updates
   env:
-    application_hostname: jira-loadb-42qv1o9fmt84-95422564.us-west-2.elb.amazonaws.com  # Jira DC hostname without protocol and port e.g. test-jira.atlassian.com or localhost
+    application_hostname: jira-loadb-lkjr1h2rqf7k-1634606889.us-west-2.elb.amazonaws.com  # Jira DC hostname without protocol and port e.g. test-jira.atlassian.com or localhost
     application_protocol: http      # http or https
     application_port: 80            # 80, 443, 8080, 2990, etc
     secure: True                    # Set False to allow insecure connections, e.g. when using self-signed SSL certificate
@@ -24,19 +24,19 @@ settings:
     # Action percentage for Jmeter and Locust load executors
     create_issue: 4
     search_jql: 13
-    view_issue: 43
+    view_issue: 30
     view_project_summary: 4
-    view_dashboard: 12
-    edit_issue: 4
+    view_dashboard: 11
+    edit_issue: 5
     add_comment: 2
-    browse_projects: 4
-    view_scrum_board: 3
-    view_kanban_board: 3
-    view_backlog: 6
+    browse_projects: 5
+    view_scrum_board: 4
+    view_kanban_board: 4
+    view_backlog: 5
     browse_boards: 2
-    standalone_extension: 0 # By default disabled
+    standalone_extension: 11 # By default disabled
     # Custom dataset section.
-    custom_dataset_query:          # Write JQL query to add JQL output to the app/datasets/jira/custom-issues.csv, e.g.
+    custom_dataset_query:  project = 'KAN'
 services:
   - module: shellexec
     prepare:
