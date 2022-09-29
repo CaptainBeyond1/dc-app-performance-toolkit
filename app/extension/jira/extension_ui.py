@@ -28,6 +28,7 @@ def app_specific_action(webdriver, datasets):
             jql.send_keys('project=TEST')
             time.sleep(1)
             jql.send_keys(Keys.ENTER)
+            time.sleep(1)
             page.wait_until_visible((By.ID, "summaryContainer"))
         sub_measure()
 
