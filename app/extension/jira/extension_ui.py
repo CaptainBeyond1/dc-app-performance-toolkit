@@ -28,14 +28,14 @@ def app_specific_action(webdriver, datasets):
             jql.send_keys('project=TEST')
             time.sleep(1)
             jql.send_keys(Keys.ENTER)
-            page.wait_until_visible((By.ID, "boardChart"))
+            page.wait_until_visible((By.ID, "summaryContainer"))
         sub_measure()
 
         @print_timing("selenium_app_custom_action:refresh_chart")
         def sub_measure():
             actions.send_keys(Keys.ENTER)
             actions.perform()
-            page.wait_until_visible((By.ID, "boardChart"))
+            page.wait_until_visible((By.ID, "summaryContainer"))
         sub_measure()
 
         @print_timing("selenium_app_custom_action:view_charts")
