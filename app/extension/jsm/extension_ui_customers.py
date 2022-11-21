@@ -26,8 +26,8 @@ def app_specific_action(webdriver, datasets):
             name = page.get_element((By.ID, "summary"))
             name.send_keys(''.join(random.choice(letters) for i in range(10)));
             webdriver.save_screenshot('1.png')
-            page.wait_until_visible((By.ID, "customfield_10600"))
-            testfield = page.get_element((By.ID, "customfield_10600"))
+            page.wait_until_visible((By.ID, "customfield_10700"))
+            testfield = page.get_element((By.ID, "customfield_10700"))
             testfield.click()
             webdriver.save_screenshot('2.png')
             testfield.send_keys(''.join(random.choice(letters) for i in range(10)))
