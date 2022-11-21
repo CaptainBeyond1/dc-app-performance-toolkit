@@ -1,5 +1,7 @@
 from selenium_ui.jsm import modules_customers
 from extension.jsm import extension_ui_customers  # noqa F401
+from util.conf import JSM_SETTINGS
+import pytest
 
 
 # this action should be the first one
