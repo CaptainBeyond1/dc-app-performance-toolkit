@@ -5,7 +5,7 @@ settings:
   verbose: false
   check-updates: false    # disable bzt check for updates
   env:
-    application_hostname: jira-loadb-3nl8m1pmf0if-632230846.us-west-2.elb.amazonaws.com   # Jira Service Desk DC hostname without protocol and port e.g. test-jsm.atlassian.com or localhost
+    application_hostname: jira-loadb-1m9wnob5l3f3y-1870131356.us-west-2.elb.amazonaws.com   # Jira Service Desk DC hostname without protocol and port e.g. test-jsm.atlassian.com or localhost
     application_protocol: http      # http or https
     application_port: 80            # 80, 443, 8080, 2990, etc
     secure: True                    # Set False to allow insecure connections, e.g. when using self-signed SSL certificate
@@ -21,7 +21,7 @@ settings:
     total_actions_per_hour_customers: 15000
     insight: False                  # Set True to enable Insight specific tests
     WEBDRIVER_VISIBLE: False
-    JMETER_VERSION: 5.4.2
+    JMETER_VERSION: 5.4.3
     LANGUAGE: en_US.utf8
     allow_analytics: Yes            # Allow sending basic run analytics to Atlassian. These analytics help us to understand how the tool is being used and help us to continue to invest in this tooling. For more details please see our README.
     # Action percentage for Jmeter and Locust load executors
@@ -170,7 +170,11 @@ modules:
       httpsampler.ignore_failed_embedded_resources: "true"
   selenium:
     chromedriver:
+<<<<<<< HEAD
       version: "107.0.5304.62" # Supports Chrome version 103. You can refer to http://chromedriver.chromium.org/downloads
+=======
+      version: "107.0.5304.62" # Supports Chrome version 107. You can refer to http://chromedriver.chromium.org/downloads
+>>>>>>> a6358fe370447f9b0625bcc4236a40a67926c066
 reporting:
   - data-source: sample-labels
     module: junit-xml
