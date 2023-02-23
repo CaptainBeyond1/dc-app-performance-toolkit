@@ -4,7 +4,7 @@ platform: platform
 product: marketplace
 category: devguide
 subcategory: build
-date: "2022-11-14"
+date: "2023-02-13"
 ---
 # Data Center App Performance Toolkit User Guide For Confluence
 
@@ -12,13 +12,13 @@ This document walks you through the process of testing your app on Confluence us
 
 In this document, we cover the use of the Data Center App Performance Toolkit on two types of environments:
 
-**[Development environment](#mainenvironmentdev)**: Confluence Data Center environment for a test run of Data Center App Performance Toolkit and development of [app-specific actions](#appspecificactions). We recommend you use the [AWS Quick Start for Confluence Data Center](https://aws.amazon.com/quickstart/architecture/confluence/) with the parameters prescribed here.
+**[Development environment](#mainenvironmentdev)**: Confluence Data Center environment for a test run of Data Center App Performance Toolkit and development of [app-specific actions](#appspecificactions).
 
 1. [Set up a development environment Confluence Data Center on AWS](#devinstancesetup).
 2. [Run toolkit on the development environment locally](#devtestscenario).
 3. [Develop and test app-specific actions locally](#devappaction).
 
-**[Enterprise-scale environment](#mainenvironmententerprise)**: Confluence Data Center environment used to generate Data Center App Performance Toolkit test results for the Marketplace approval process. Preferably, use the [AWS Quick Start for Confluence Data Center](https://aws.amazon.com/quickstart/architecture/confluence/) with the parameters prescribed below. These parameters provision larger, more powerful infrastructure for your Confluence Data Center.
+**[Enterprise-scale environment](#mainenvironmententerprise)**: Confluence Data Center environment used to generate Data Center App Performance Toolkit test results for the Marketplace approval process.
 
 4. [Set up an enterprise-scale environment Confluence Data Center on AWS](#instancesetup).
 5. [Set up an execution environment for the toolkit](#executionhost).
@@ -32,6 +32,31 @@ Running the tests in a development environment helps familiarize you with the to
 It'll also provide you with a lightweight and less expensive environment for developing app-specific actions.
 Once you're ready to generate test results for the Marketplace Data Center Apps Approval process,
 run the toolkit in an **enterprise-scale environment**.
+
+---
+
+{{% note %}}
+In case you are in the middle of Confluence DC app performance testing with the CloudFormation deployment option,
+the process can be continued after switching to the `6.3.0` DCAPT version.
+{{% /note %}}
+
+* Checkout release `6.3.0` of the `dc-app-performance-toolkit` repository:
+
+   ```
+   git checkout release-6.3.0
+   ```
+* Use the docker container with the `6.3.0` release tag to run performance tests from docker:
+
+   ```
+   cd dc-app-performance-toolkit
+   docker pull atlassian/dcapt:6.3.0
+   docker run --shm-size=4g -v "$PWD:/dc-app-performance-toolkit" atlassian/dcapt:6.3.0 confluence.yml
+   ```
+* The corresponding version of the user guide could be found in the `dc-app-performance-toolkit/docs` folder or by this 
+[link](https://github.com/atlassian/dc-app-performance-toolkit/blob/release-6.3.0/docs/dc-apps-performance-toolkit-user-guide-confluence.md).
+* If specific version of the Confluence DC is required, please contact support in the [community Slack](http://bit.ly/dcapt_slack).
+
+---
 
 ### <a id="devinstancesetup"></a>1. Setting up Confluence Data Center development environment
 
@@ -62,9 +87,12 @@ Below process describes how to install low-tier Confluence DC with "small" datas
    section of the official documentation.
 2. Set up [environment](https://atlassian-labs.github.io/data-center-terraform/userguide/PREREQUISITES/#environment-setup).
 3. Set up [AWS security credentials](https://atlassian-labs.github.io/data-center-terraform/userguide/INSTALLATION/#1-set-up-aws-security-credentials).
+   {{% warning %}}
+   Do not use `root` user credentials for cluster creation. Instead, [create an admin user](https://docs.aws.amazon.com/IAM/latest/UserGuide/getting-set-up.html#create-an-admin).
+   {{% /warning %}}
 4. Clone the project repo:
    ```bash
-   git clone -b 2.1.1 https://github.com/atlassian-labs/data-center-terraform.git && cd data-center-terraform
+   git clone -b 2.3.1 https://github.com/atlassian-labs/data-center-terraform.git && cd data-center-terraform
    ```
 5. Copy [`dcapt-small.tfvars`](https://raw.githubusercontent.com/atlassian/dc-app-performance-toolkit/master/app/util/k8s/dcapt-small.tfvars) file to the `data-center-terraform` folder.
    ``` bash
@@ -74,14 +102,19 @@ Below process describes how to install low-tier Confluence DC with "small" datas
    - `environment_name` - any name for you environment, e.g. `dcapt-confluence-small`
    - `products` - `confluence`
    - `confluence_license` - one-liner of valid confluence license without spaces and new line symbols
-   - `region` - AWS region for deployment. **We recommend to use `us-east-2` - set as default**
+   - `region` - AWS region for deployment. **Do not change default region (`us-east-2`). If specific region is required, contact support.**
 7. Optional variables to override:
    - `confluence_version_tag` - Confluence version to deploy. Supported versions see in [README.md](https://github.com/atlassian/dc-app-performance-toolkit/blob/master/README.md).
-8. Start the installation (~20 min):
+8. From local terminal (Git bash terminal for Windows) start the installation (~20 min):
    ```bash
    ./install.sh -c dcapt-small.tfvars
    ```
 9. Copy product URL from the console output. Product url should look like `http://a1234-54321.us-east-2.elb.amazonaws.com/confluence`.
+
+{{% note %}}
+New trial license could be generated on [my atlassian](https://my.atlassian.com/license/evaluation).
+Use `BX02-9YO1-IN86-LO5G` Server ID for generation.
+{{% /note %}}
 
 {{% note %}}
 All the datasets use the standard `admin`/`admin` credentials.
@@ -290,9 +323,12 @@ Below process describes how to install enterprise-scale Confluence DC with "larg
    section of the official documentation.
 2. Set up [environment](https://atlassian-labs.github.io/data-center-terraform/userguide/PREREQUISITES/#environment-setup).
 3. Set up [AWS security credentials](https://atlassian-labs.github.io/data-center-terraform/userguide/INSTALLATION/#1-set-up-aws-security-credentials).
+   {{% warning %}}
+   Do not use `root` user credentials for cluster creation. Instead, [create an admin user](https://docs.aws.amazon.com/IAM/latest/UserGuide/getting-set-up.html#create-an-admin).
+   {{% /warning %}}
 4. Clone the project repo:
    ```bash
-   git clone -b 2.1.1 https://github.com/atlassian-labs/data-center-terraform.git && cd data-center-terraform
+   git clone -b 2.3.1 https://github.com/atlassian-labs/data-center-terraform.git && cd data-center-terraform
    ```
 5. Copy [`dcapt.tfvars`](https://raw.githubusercontent.com/atlassian/dc-app-performance-toolkit/master/app/util/k8s/dcapt.tfvars) file to the `data-center-terraform` folder.
       ``` bash
@@ -302,14 +338,19 @@ Below process describes how to install enterprise-scale Confluence DC with "larg
    - `environment_name` - any name for you environment, e.g. `dcapt-confluence-large`
    - `products` - `confluence`
    - `confluence_license` - one-liner of valid confluence license without spaces and new line symbols
-   - `region` - AWS region for deployment. **We recommend to use `us-east-2` - set as default**
+   - `region` - AWS region for deployment.  **Do not change default region (`us-east-2`). If specific region is required, contact support.**
 7. Optional variables to override:
     - `confluence_version_tag` - Confluence version to deploy. Supported versions see in [README.md](https://github.com/atlassian/dc-app-performance-toolkit/blob/master/README.md).
-8. Start the installation (~40min):
+8. From local terminal (Git bash terminal for Windows) start the installation (~40min):
     ```bash
     ./install.sh -c dcapt.tfvars
     ```
 9. Copy product URL from the console output. Product url should look like `http://a1234-54321.us-east-2.elb.amazonaws.com/confluence`.
+
+{{% note %}}
+New trial license could be generated on [my atlassian](https://my.atlassian.com/license/evaluation).
+Use this server id for generation `BX02-9YO1-IN86-LO5G`.
+{{% /note %}}
 
 {{% note %}}
 All the datasets use the standard `admin`/`admin` credentials.
@@ -496,7 +537,7 @@ To receive scalability benchmark results for two-node Confluence DC **with** app
 
 1. Navigate to `data-center-terraform` folder.
 2. Open `dcapt.tfvars` file and set `confluence_replica_count` value to `2`.
-3. Start scaling (~20 min):
+3. From local terminal (Git bash terminal for Windows) start scaling (~20 min):
    ```bash
    ./install.sh -c dcapt.tfvars
    ```
