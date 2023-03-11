@@ -100,7 +100,7 @@ def app_specific_action(webdriver, datasets):
             page.wait_until_visible((By.ID, "content-title")) 
             content_title = page.get_element((By.ID, "content-title"))
             content_title.click()
-            actions.send_keys(uuid.uuid4().hex[:6].upper()).perform()
+            actions.send_keys(str(uuid.uuid4())).perform()
             webdriver.save_screenshot('title.png')
             # page.return_to_parent_frame();
             button_publish = page.get_element((By.ID, "rte-button-publish"))
