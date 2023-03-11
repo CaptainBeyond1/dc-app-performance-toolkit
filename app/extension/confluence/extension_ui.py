@@ -42,7 +42,7 @@ def app_specific_action(webdriver, datasets):
 
         @print_timing("selenium_app_custom_action:open_editor_with_macro")
         def sub_measure():
-            page.go_to_url(f"{CONFLUENCE_SETTINGS.server_url}/display/APATDH/1") # Link to a app specific blog, title should match "title ~ 'Selenium*'" CQL, for example "Selenium1"
+            page.go_to_url(f"{CONFLUENCE_SETTINGS.server_url}/display/TEST/SeleniumAppPage") # Link to a app specific blog, title should match "title ~ 'Selenium*'" CQL, for example "Selenium1"
             page.wait_until_visible((By.ID, "title-text")) # Wait for title field visible
             page.wait_until_visible((By.ID, "editPageLink"))  
             edit_button = page.get_element((By.ID, "editPageLink"))
