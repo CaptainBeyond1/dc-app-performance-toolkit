@@ -16,7 +16,7 @@ def app_specific_action(webdriver, datasets):
 
         @print_timing("selenium_instantsearch:view_log_table_page")
         def view_log_table_page():
-            page.go_to_url(f"{CONFLUENCE_SETTINGS.server_url}/display/INSTASEARCH/instantsearchlogtable")
+            page.go_to_url(f"{CONFLUENCE_SETTINGS.server_url}/display/TEST/INSTASEARCH")
             page.wait_until_visible((By.ID, "popularTable"))
             page.wait_until_visible((By.ID, "failedTable"))
             page.wait_until_visible((By.ID, "userSearchTable"))
@@ -25,7 +25,7 @@ def app_specific_action(webdriver, datasets):
 
         @print_timing("selenium_instantsearch:view_macro_page_and_search")
         def view_macro_page_and_search():
-            page.go_to_url(f"{CONFLUENCE_SETTINGS.server_url}/display/INSTASEARCH/instantsearchmacro")
+            page.go_to_url(f"{CONFLUENCE_SETTINGS.server_url}/display/TEST/INSTASEARCHMACRO")
             page.wait_until_visible((By.CLASS_NAME, "plugin_instantsearch_searchbox"))
             page.get_element((By.CLASS_NAME, "plugin_instantsearch_searchbox")).send_keys("page")
             page.wait_until_visible((By.CLASS_NAME, "plugin_instantsearch_returnedSearchResult"))
