@@ -5,7 +5,7 @@ settings:
   verbose: false
   check-updates: false    # disable bzt check for updates
   env:
-    application_hostname: af6c9535c20574408b6ea4f1d2f1d954-1744501909.us-east-2.elb.amazonaws.com   # Confluence DC hostname without protocol, port and postfix e.g. test-confluence.atlassian.com or localhost
+    application_hostname: a3f3084217f0a4050a1586f1fff9f5e7-263266764.us-east-2.elb.amazonaws.com   # Confluence DC hostname without protocol, port and postfix e.g. test-confluence.atlassian.com or localhost
     application_protocol: http        # http or https
     application_port: 80              # 80, 443, 8080, 1990, etc
     secure: True                      # Set False to allow insecure connections, e.g. when using self-signed SSL certificate
@@ -13,9 +13,9 @@ settings:
     admin_login: admin
     admin_password: admin
     load_executor: jmeter             # jmeter and locust are supported. jmeter by default.
-    concurrency: 10                  # number of concurrent virtual users for jmeter or locust scenario
-    test_duration: 12m
-    ramp-up: 2m                       # time to spin all concurrent users
+    concurrency: 200                  # number of concurrent virtual users for jmeter or locust scenario
+    test_duration: 45m
+    ramp-up: 5m                       # time to spin all concurrent users
     total_actions_per_hour: 20000
     WEBDRIVER_VISIBLE: False
     JMETER_VERSION: 5.4.3
@@ -35,7 +35,7 @@ settings:
     like_page: 3
     standalone_extension: 0 # By default disabled
     # Custom dataset section.
-    custom_dataset_query: "title ~ 'FormatTest*'"          # Write CQL query to add CQL output to the app/datasets/confluence/custom_pages.csv, e.g. "title ~ 'AppPage*'"
+    custom_dataset_query: "title ~ 'FormatTest*'"   # Write CQL query to add CQL output to the app/datasets/confluence/custom_pages.csv, e.g. "title ~ 'AppPage*'"
 services:
   - module: shellexec
     prepare:
