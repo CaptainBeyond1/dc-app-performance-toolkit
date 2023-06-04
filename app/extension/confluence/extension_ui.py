@@ -23,14 +23,14 @@ def app_specific_action(webdriver, datasets):
             page.wait_until_visible((By.ID, "page-reminders-action"))
 
             # activate status window
-            webdriver.find_element_by_xpath(".//*[@id='page-reminders-action']").click()
+            page.get_element((By.XPATH,".//*[@id='page-reminders-action']")).click()
 
             # wait for list of reminders
             page.wait_until_visible((By.ID, "page-reminders-list-new"))
 
             # get last sent datetime from table cell (assuming there is just one reminder and ours is the first)
             last_sent_cell \
-                = webdriver.find_element_by_xpath("/html/body/section[1]/div/div[2]/div/table/tbody/tr/td[3]")
+                = page.get_element((By.XPATH,"/html/body/section[1]/div/div[2]/div/table/tbody/tr/td[3]"))
             last_sent_datetime = dateutil.parser.parse(last_sent_cell.text)
 
             # only if it's not older than 120 seconds the test succeeds
