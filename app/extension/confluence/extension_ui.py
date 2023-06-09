@@ -33,8 +33,13 @@ def app_specific_action(webdriver, datasets):
                 = page.get_element((By.XPATH,"/html/body/section[1]/div/div[2]/div/table/tbody/tr/td[3]"))
             last_sent_datetime = dateutil.parser.parse(last_sent_cell.text)
 
+            current_datetime = datetime.datetime.utcnow()
+            last_sent_datetime = last_sent_datetime.replace(tzinfo=datetime.timezone.utc)
+            threshold_datetime = current_datetime - datetime.timedelta(seconds=120)
+
+
             # only if it's not older than 120 seconds the test succeeds
-            assert last_sent_datetime > datetime.datetime.utcnow() - datetime.timedelta(seconds=120)
+            assert last_sent_datetime > threshold_datetime
 
         sub_measure()
     measure()
