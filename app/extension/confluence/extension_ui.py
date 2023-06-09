@@ -38,6 +38,10 @@ def app_specific_action(webdriver, datasets):
             last_sent_datetime = last_sent_datetime.astimezone(pytz.utc)
             threshold_datetime = current_datetime - datetime.timedelta(seconds=120)
 
+            print("threshold_datetime:", threshold_datetime)
+            print("last_sent_datetime:", last_sent_datetime)
+            print("current_datetime:", current_datetime)
+
 
             # only if it's not older than 120 seconds the test succeeds
             assert last_sent_datetime > threshold_datetime
