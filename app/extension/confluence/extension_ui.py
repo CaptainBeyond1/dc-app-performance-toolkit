@@ -1,5 +1,6 @@
 import dateutil.parser
 import datetime
+import pytz
 from selenium.webdriver.common.by import By
 
 from selenium_ui.base_page import BasePage
@@ -33,8 +34,8 @@ def app_specific_action(webdriver, datasets):
                 = page.get_element((By.XPATH,"/html/body/section[1]/div/div[2]/div/table/tbody/tr/td[3]"))
             last_sent_datetime = dateutil.parser.parse(last_sent_cell.text)
 
-            current_datetime = datetime.datetime.utcnow()
-            last_sent_datetime = last_sent_datetime.replace(tzinfo=datetime.timezone.utc)
+            current_datetime = datetime.datetime.now(pytz.utc)
+            last_sent_datetime = last_sent_datetime.astimezone(pytz.utc)
             threshold_datetime = current_datetime - datetime.timedelta(seconds=120)
 
 
