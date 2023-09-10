@@ -1,0 +1,257 @@
+[2023-09-08 17:43:59,255 INFO root] Taurus CLI Tool v1.16.23
+[2023-09-08 17:43:59,255 DEBUG root] Build: 14504 Wed May 24 10:40:08 UTC 2023
+[2023-09-08 17:43:59,255 DEBUG root] Extended git info:  5902bf48 Changelog 1.16.23
+[2023-09-08 17:43:59,255 DEBUG root] Command-line options: {'log': '/tmp/bzt_3ukum1l3.log', 'option': ['modules.console.disable=true'], 'quiet': None, 'verbose': None, 'no_system_configs': None, 'aliases': []}
+[2023-09-08 17:43:59,256 DEBUG root] Python: CPython 3.11.4
+[2023-09-08 17:43:59,256 DEBUG root] OS: uname_result(system='Linux', node='9361c1a87dfb', release='5.19.0-1025-aws', version='#26~22.04.1-Ubuntu SMP Mon Apr 24 01:58:15 UTC 2023', machine='x86_64')
+[2023-09-08 17:43:59,256 DEBUG root] Path to interpreter: /usr/local/bin/python
+[2023-09-08 17:43:59,256 DEBUG root] Path to packages: ['/usr/local/bin', '/usr/local/lib/python311.zip', '/usr/local/lib/python3.11', '/usr/local/lib/python3.11/lib-dynload', '/usr/local/lib/python3.11/site-packages']
+[2023-09-08 17:43:59,256 DEBUG root] Default python: /usr/local/bin/python
+[2023-09-08 17:43:59,256 DEBUG root] Default python3: /usr/local/bin/python3
+[2023-09-08 17:43:59,256 DEBUG root] Adding personal config: /root/.bzt-rc
+[2023-09-08 17:43:59,256 INFO root] No personal config found, creating one at /root/.bzt-rc
+[2023-09-08 17:43:59,256 INFO root] Starting with configs: ['/root/.bzt-rc', 'jira.yml']
+[2023-09-08 17:43:59,256 INFO Engine] Configuring...
+[2023-09-08 17:43:59,268 DEBUG Engine] Base configs list: ['/usr/local/lib/python3.11/site-packages/bzt/resources/10-base-config.yml']
+[2023-09-08 17:43:59,268 DEBUG Engine.Configuration] Configs: ['/usr/local/lib/python3.11/site-packages/bzt/resources/10-base-config.yml']
+[2023-09-08 17:43:59,268 DEBUG Engine.Configuration] Reading /usr/local/lib/python3.11/site-packages/bzt/resources/10-base-config.yml as YAML
+[2023-09-08 17:43:59,279 DEBUG Engine] User configs list: ['/root/.bzt-rc', 'jira.yml']
+[2023-09-08 17:43:59,279 DEBUG Engine.Configuration] Configs: ['/root/.bzt-rc', 'jira.yml']
+[2023-09-08 17:43:59,279 DEBUG Engine.Configuration] Reading /root/.bzt-rc as YAML
+[2023-09-08 17:43:59,281 DEBUG Engine.Configuration] Reading jira.yml as YAML
+[2023-09-08 17:43:59,288 DEBUG Engine.Configuration] Configs: ['/root/.bzt-rc', 'jira.yml']
+[2023-09-08 17:43:59,288 DEBUG Engine.Configuration] Reading /root/.bzt-rc as YAML
+[2023-09-08 17:43:59,290 DEBUG Engine.Configuration] Reading jira.yml as YAML
+[2023-09-08 17:43:59,297 INFO HTTPClient] Proxy settings not set
+[2023-09-08 17:43:59,297 DEBUG ConfigOverrider] Applying modules.console.disable=true
+[2023-09-08 17:43:59,297 DEBUG ConfigOverrider] Applying: [disable]=true
+[2023-09-08 17:43:59,297 DEBUG ConfigOverrider] Parsed override value: 'true' -> True (<class 'bool'>)
+[2023-09-08 17:43:59,297 INFO Engine] Artifacts dir: /dc-app-performance-toolkit/app/results/jira/2023-09-08_17-43-59
+[2023-09-08 17:43:59,297 DEBUG Engine] New artifact filename: /dc-app-performance-toolkit/app/results/jira/2023-09-08_17-43-59/effective
+[2023-09-08 17:43:59,298 DEBUG Engine.Configuration] Dumping YAML config into /dc-app-performance-toolkit/app/results/jira/2023-09-08_17-43-59/effective.yml
+[2023-09-08 17:43:59,308 DEBUG Engine.Configuration] Dumping JSON config into /dc-app-performance-toolkit/app/results/jira/2023-09-08_17-43-59/effective.json
+[2023-09-08 17:43:59,309 DEBUG Engine] New artifact filename: /dc-app-performance-toolkit/app/results/jira/2023-09-08_17-43-59/merged.yml
+[2023-09-08 17:43:59,309 DEBUG Engine.Configuration] Dumping YAML config into /dc-app-performance-toolkit/app/results/jira/2023-09-08_17-43-59/merged.yml
+[2023-09-08 17:43:59,313 DEBUG Engine] New artifact filename: /dc-app-performance-toolkit/app/results/jira/2023-09-08_17-43-59/merged.json
+[2023-09-08 17:43:59,313 DEBUG Engine.Configuration] Dumping JSON config into /dc-app-performance-toolkit/app/results/jira/2023-09-08_17-43-59/merged.json
+[2023-09-08 17:43:59,314 DEBUG Engine] Add existing artifact (move=False): /root/.bzt-rc
+[2023-09-08 17:43:59,314 DEBUG Engine] Copying /root/.bzt-rc to /dc-app-performance-toolkit/app/results/jira/2023-09-08_17-43-59/.bzt-rc
+[2023-09-08 17:43:59,314 DEBUG Engine] Add existing artifact (move=False): jira.yml
+[2023-09-08 17:43:59,314 DEBUG Engine] Copying jira.yml to /dc-app-performance-toolkit/app/results/jira/2023-09-08_17-43-59/jira.yml
+[2023-09-08 17:43:59,314 DEBUG Engine] Set PYTHONPATH to :
+	CURRENT: '' +
+	TEMP: '/dc-app-performance-toolkit/app/results/jira/2023-09-08_17-43-59/python-packages/3.11.4' +
+	USER: '/root/.bzt/python-packages/3.11.4'
+[2023-09-08 17:43:59,314 DEBUG Engine] Content of user packages dir: []
+[2023-09-08 17:43:59,315 DEBUG Engine] OS env: OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
+[2023-09-08 17:43:59,315 DEBUG Engine] OS env: application_hostname=a246530e8bdf34f3d8ca00226992a29e-1627842343.us-east-2.elb.amazonaws.com
+[2023-09-08 17:43:59,315 DEBUG Engine] OS env: application_protocol=http
+[2023-09-08 17:43:59,315 DEBUG Engine] OS env: application_port=80
+[2023-09-08 17:43:59,315 DEBUG Engine] OS env: secure=True
+[2023-09-08 17:43:59,315 DEBUG Engine] OS env: application_postfix=/jira
+[2023-09-08 17:43:59,315 DEBUG Engine] OS env: admin_login=admin
+[2023-09-08 17:43:59,315 DEBUG Engine] OS env: admin_password=admin
+[2023-09-08 17:43:59,315 DEBUG Engine] OS env: load_executor=jmeter
+[2023-09-08 17:43:59,315 DEBUG Engine] OS env: concurrency=200
+[2023-09-08 17:43:59,315 DEBUG Engine] OS env: test_duration=45m
+[2023-09-08 17:43:59,315 DEBUG Engine] OS env: ramp-up=3m
+[2023-09-08 17:43:59,315 DEBUG Engine] OS env: total_actions_per_hour=54500
+[2023-09-08 17:43:59,315 DEBUG Engine] OS env: WEBDRIVER_VISIBLE=False
+[2023-09-08 17:43:59,315 DEBUG Engine] OS env: JMETER_VERSION=5.5
+[2023-09-08 17:43:59,315 DEBUG Engine] OS env: LANGUAGE=en_US.utf8
+[2023-09-08 17:43:59,315 DEBUG Engine] OS env: allow_analytics=True
+[2023-09-08 17:43:59,315 DEBUG Engine] OS env: create_issue=4
+[2023-09-08 17:43:59,315 DEBUG Engine] OS env: search_jql=11
+[2023-09-08 17:43:59,315 DEBUG Engine] OS env: view_issue=34
+[2023-09-08 17:43:59,315 DEBUG Engine] OS env: view_project_summary=3
+[2023-09-08 17:43:59,315 DEBUG Engine] OS env: view_dashboard=10
+[2023-09-08 17:43:59,315 DEBUG Engine] OS env: edit_issue=5
+[2023-09-08 17:43:59,315 DEBUG Engine] OS env: add_comment=2
+[2023-09-08 17:43:59,315 DEBUG Engine] OS env: browse_projects=9
+[2023-09-08 17:43:59,315 DEBUG Engine] OS env: view_scrum_board=8
+[2023-09-08 17:43:59,315 DEBUG Engine] OS env: view_kanban_board=7
+[2023-09-08 17:43:59,315 DEBUG Engine] OS env: view_backlog=6
+[2023-09-08 17:43:59,315 DEBUG Engine] OS env: browse_boards=1
+[2023-09-08 17:43:59,315 DEBUG Engine] OS env: standalone_extension=0
+[2023-09-08 17:43:59,315 DEBUG Engine] OS env: TAURUS_ARTIFACTS_DIR=/dc-app-performance-toolkit/app/results/jira/2023-09-08_17-43-59
+[2023-09-08 17:43:59,315 DEBUG root] Closing log handler: /tmp/bzt_3ukum1l3.log
+[2023-09-08 17:43:59,315 DEBUG root] Switched writing logs to /dc-app-performance-toolkit/app/results/jira/2023-09-08_17-43-59/bzt.log
+[2023-09-08 17:43:59,315 DEBUG root] Linting config
+[2023-09-08 17:43:59,317 INFO Engine] Preparing...
+[2023-09-08 17:43:59,317 DEBUG Engine] Module config: consolidator {'class': 'bzt.modules.aggregator.ConsolidatingAggregator', 'rtimes-len': 0, 'percentiles': []}
+[2023-09-08 17:43:59,317 DEBUG root] Importing module: bzt.modules.aggregator
+[2023-09-08 17:43:59,453 DEBUG root] Loading class: 'ConsolidatingAggregator' from <module 'bzt.modules.aggregator' from '/usr/local/lib/python3.11/site-packages/bzt/modules/aggregator.py'>
+[2023-09-08 17:43:59,453 DEBUG Engine.consolidator] Buffer scaling setup: percentile None from [] selected
+[2023-09-08 17:43:59,453 DEBUG Engine] Module config: monitoring {'class': 'bzt.modules.monitoring.Monitoring'}
+[2023-09-08 17:43:59,453 DEBUG root] Importing module: bzt.modules.monitoring
+[2023-09-08 17:43:59,454 DEBUG root] Loading class: 'Monitoring' from <module 'bzt.modules.monitoring' from '/usr/local/lib/python3.11/site-packages/bzt/modules/monitoring.py'>
+[2023-09-08 17:43:59,454 DEBUG Engine] Module config: shellexec {'class': 'bzt.modules.shellexec.ShellExecutor'}
+[2023-09-08 17:43:59,454 DEBUG root] Importing module: bzt.modules.shellexec
+[2023-09-08 17:43:59,455 DEBUG root] Loading class: 'ShellExecutor' from <module 'bzt.modules.shellexec' from '/usr/local/lib/python3.11/site-packages/bzt/modules/shellexec.py'>
+[2023-09-08 17:43:59,455 DEBUG Engine] Module config: pip-install {'class': 'bzt.modules.services.PipInstaller'}
+[2023-09-08 17:43:59,455 DEBUG root] Importing module: bzt.modules.services
+[2023-09-08 17:43:59,457 DEBUG pyvirtualdisplay] version=3.0
+[2023-09-08 17:43:59,466 DEBUG root] Loading class: 'PipInstaller' from <module 'bzt.modules.services' from '/usr/local/lib/python3.11/site-packages/bzt/modules/services.py'>
+[2023-09-08 17:43:59,466 DEBUG Engine.shellexec] Added prepare task: {'command': 'python util/pre_run/environment_checker.py'}
+[2023-09-08 17:43:59,466 DEBUG Engine.shellexec] Added prepare task: {'command': 'python util/pre_run/check_for_updates.py'}
+[2023-09-08 17:43:59,466 DEBUG Engine.shellexec] Added prepare task: {'command': 'python util/data_preparation/jira_prepare_data.py'}
+[2023-09-08 17:43:59,466 DEBUG Engine.shellexec] Added shutdown task: {'command': 'python util/post_run/jmeter_post_check.py'}
+[2023-09-08 17:43:59,466 DEBUG Engine.shellexec] Added shutdown task: {'command': 'python util/jtl_convertor/jtls-to-csv.py kpi.jtl selenium.jtl'}
+[2023-09-08 17:43:59,466 DEBUG Engine.shellexec] Added post-process task: {'command': 'python util/analytics/analytics.py jira'}
+[2023-09-08 17:43:59,466 DEBUG Engine.shellexec] Added post-process task: {'command': 'python util/post_run/cleanup_results_dir.py'}
+[2023-09-08 17:43:59,466 INFO Engine.shellexec.Task] Starting shell command: python util/pre_run/environment_checker.py
+[2023-09-08 17:43:59,466 DEBUG root] Executing shell: python util/pre_run/environment_checker.py at /dc-app-performance-toolkit/app
+[2023-09-08 17:43:59,554 DEBUG Engine.shellexec.Task] Output for python util/pre_run/environment_checker.py:
+Python version: 3.11.4
+Data Center App Performance Toolkit version: 7.5.0
+
+[2023-09-08 17:43:59,554 DEBUG Engine.shellexec.Task] Task was finished with exit code 0: python util/pre_run/environment_checker.py
+[2023-09-08 17:43:59,554 INFO Engine.shellexec.Task] Starting shell command: python util/pre_run/check_for_updates.py
+[2023-09-08 17:43:59,554 DEBUG root] Executing shell: python util/pre_run/check_for_updates.py at /dc-app-performance-toolkit/app
+[2023-09-08 17:43:59,876 DEBUG Engine.shellexec.Task] Output for python util/pre_run/check_for_updates.py:
+Info: DCAPT version 7.5.0 is the latest.
+
+[2023-09-08 17:43:59,877 DEBUG Engine.shellexec.Task] Task was finished with exit code 0: python util/pre_run/check_for_updates.py
+[2023-09-08 17:43:59,877 INFO Engine.shellexec.Task] Starting shell command: python util/data_preparation/jira_prepare_data.py
+[2023-09-08 17:43:59,877 DEBUG root] Executing shell: python util/data_preparation/jira_prepare_data.py at /dc-app-performance-toolkit/app
+[2023-09-08 17:44:04,774 DEBUG Engine.shellexec.Task] Output for python util/data_preparation/jira_prepare_data.py:
+Started preparing data
+Server url:  http://a246530e8bdf34f3d8ca00226992a29e-1627842343.us-east-2.elb.amazonaws.com:80/jira
+Users count: 200
+Projects: 245
+Issues count: 8000
+Scrum boards count: 4
+Kanban boards count: 50
+Jqls count: 150
+------------------------
+Custom dataset issues: 0
+Finished preparing data
+
+[2023-09-08 17:44:04,775 DEBUG Engine.shellexec.Task] Task was finished with exit code 0: python util/data_preparation/jira_prepare_data.py
+[2023-09-08 17:44:04,775 DEBUG root] Executing shell: ['/usr/local/bin/python', '-m', 'pip', '--version'] at .
+[2023-09-08 17:44:05,040 DEBUG root] Executing shell: ['/usr/local/bin/python', '-m', 'pip', 'list'] at .
+[2023-09-08 17:44:05,728 DEBUG Engine] Module config: local {'class': 'bzt.modules.provisioning.Local'}
+[2023-09-08 17:44:05,728 DEBUG root] Importing module: bzt.modules.provisioning
+[2023-09-08 17:44:05,728 DEBUG root] Loading class: 'Local' from <module 'bzt.modules.provisioning' from '/usr/local/lib/python3.11/site-packages/bzt/modules/provisioning.py'>
+[2023-09-08 17:44:05,728 DEBUG Engine] Module config: jmeter {'class': 'bzt.modules.jmeter.JMeterExecutor', 'protocol-handlers': {'http': 'bzt.jmx.http.HTTPProtocolHandler', 'mqtt': 'bzt.jmx.mqtt.MQTTProtocolHandler', 'grpc': 'bzt.jmx.grpc.GRPCProtocolHandler'}, 'plugins': ['jpgc-casutg', 'jpgc-dummy', 'jpgc-ffw', 'jpgc-fifo', 'jpgc-functions', 'jpgc-json', 'jpgc-perfmon', 'jpgc-prmctl', 'jpgc-tst', 'bzm-parallel=0.4', 'bzm-random-csv=0.6', 'jpgc-casutg=2.5', 'jpgc-dummy=0.2', 'jpgc-ffw=2.0', 'jpgc-fifo=0.2', 'jpgc-functions=2.1', 'jpgc-json=2.6', 'jpgc-perfmon=2.1', 'jpgc-prmctl=0.4', 'jpgc-tst=2.4', 'jpgc-wsc=0.3', 'tilln-sshmon=1.0', 'jpgc-synthesis=2.2'], 'properties': {'jmeter.save.saveservice.autoflush': 'true', 'jmeter.save.saveservice.connect_time': 'true', 'jmeterengine.force.system.exit': 'true', 'summariser.name': ''}, 'version': '5.5', 'detect-plugins': True, 'memory-xmx': '8G', 'system-properties': {'server.rmi.ssl.disable': True, 'java.rmi.server.hostname': 'localhost', 'httpsampler.ignore_failed_embedded_resources': 'true'}}
+[2023-09-08 17:44:05,728 DEBUG root] Importing module: bzt.modules.jmeter
+[2023-09-08 17:44:05,736 DEBUG root] Loading class: 'JMeterExecutor' from <module 'bzt.modules.jmeter' from '/usr/local/lib/python3.11/site-packages/bzt/modules/jmeter.py'>
+[2023-09-08 17:44:05,737 DEBUG Engine] Module config: selenium {'class': 'bzt.modules._selenium.SeleniumExecutor', 'chromedriver': {'version': '114.0.5735.90'}}
+[2023-09-08 17:44:05,737 DEBUG root] Importing module: bzt.modules._selenium
+[2023-09-08 17:44:05,737 DEBUG root] Loading class: 'SeleniumExecutor' from <module 'bzt.modules._selenium' from '/usr/local/lib/python3.11/site-packages/bzt/modules/_selenium.py'>
+[2023-09-08 17:44:05,737 DEBUG Engine.local] Preparing executor: jmeter/139658378766928
+[2023-09-08 17:44:05,737 DEBUG Engine] New artifact filename: /dc-app-performance-toolkit/app/results/jira/2023-09-08_17-43-59/jmeter.log
+[2023-09-08 17:44:05,738 DEBUG Engine.jmeter] Checking if port 4445 is free
+[2023-09-08 17:44:05,738 DEBUG Engine.jmeter] Port 4445 is free
+[2023-09-08 17:44:05,738 DEBUG Engine.jmeter] Using port 4445 for management
+[2023-09-08 17:44:05,738 DEBUG Engine.jmeter] Getting Jmeter version.
+[2023-09-08 17:44:05,738 DEBUG Engine.jmeter] Autodetect version is enabled
+[2023-09-08 17:44:05,738 DEBUG Engine.jmeter] JMeter version: 5.5
+[2023-09-08 17:44:05,738 DEBUG Engine.jmeter] Setting JVM heap size to 8G
+[2023-09-08 17:44:05,738 DEBUG Engine.jmeter] Additional system properties {'server.rmi.ssl.disable': True, 'java.rmi.server.hostname': 'localhost', 'httpsampler.ignore_failed_embedded_resources': 'true'}
+[2023-09-08 17:44:05,738 DEBUG Engine] New artifact filename: /dc-app-performance-toolkit/app/results/jira/2023-09-08_17-43-59/system.properties
+[2023-09-08 17:44:05,738 DEBUG Engine.jmeter] Additional properties: {'jmeter.save.saveservice.autoflush': 'true', 'jmeter.save.saveservice.connect_time': 'true', 'jmeterengine.force.system.exit': 'true', 'summariser.name': '', 'application_hostname': 'a246530e8bdf34f3d8ca00226992a29e-1627842343.us-east-2.elb.amazonaws.com', 'application_protocol': 'http', 'application_port': '80', 'application_postfix': '/jira', 'total_actions_per_hr': '54500', 'perc_create_issue': '4', 'perc_search_jql': '11', 'perc_view_issue': '34', 'perc_view_project_summary': '3', 'perc_view_dashboard': '10', 'perc_edit_issue': '5', 'perc_add_comment': '2', 'perc_browse_projects': '9', 'perc_view_scrum_board': '8', 'perc_view_kanban_board': '7', 'perc_view_backlog': '6', 'perc_browse_boards': '1', 'perc_standalone_extension': '0', 'jmeterengine.nongui.port': 4445, 'jmeterengine.nongui.maxport': 4445, 'jmeter.save.saveservice.timestamp_format': 'ms', 'sampleresult.default.encoding': 'UTF-8', 'user.classpath': '/dc-app-performance-toolkit/app/results/jira/2023-09-08_17-43-59:/dc-app-performance-toolkit/app/jmeter'}
+[2023-09-08 17:44:05,738 DEBUG Engine] New artifact filename: /dc-app-performance-toolkit/app/results/jira/2023-09-08_17-43-59/jmeter-bzt.properties
+[2023-09-08 17:44:05,739 DEBUG Engine.jmeter.JavaVM] Trying JavaVM: ['java', '-version']
+[2023-09-08 17:44:05,739 DEBUG root] Executing shell: ['java', '-version'] at .
+[2023-09-08 17:44:05,775 DEBUG Engine.jmeter.JavaVM] JavaVM output: openjdk version "11.0.20" 2023-07-18
+OpenJDK Runtime Environment (build 11.0.20+8-post-Debian-1deb11u1)
+OpenJDK 64-Bit Server VM (build 11.0.20+8-post-Debian-1deb11u1, mixed mode, sharing)
+
+[2023-09-08 17:44:05,775 DEBUG Engine.jmeter.TclLibrary] We don't need to check tcl library on this platform
+[2023-09-08 17:44:05,775 INFO Engine.jmeter.JMeter] Will install JMeter into /root/.bzt/jmeter-taurus/5.5
+[2023-09-08 17:44:05,775 DEBUG Engine.jmeter.JMeter.JMeterMirrorsManager] Retrieving mirrors from page: https://jmeter.apache.org/download_jmeter.cgi
+[2023-09-08 17:44:05,777 DEBUG urllib3.connectionpool] Starting new HTTPS connection (1): jmeter.apache.org:443
+[2023-09-08 17:44:05,965 DEBUG urllib3.connectionpool] https://jmeter.apache.org:443 "GET /download_jmeter.cgi HTTP/1.1" 200 3201
+[2023-09-08 17:44:05,966 DEBUG Engine.jmeter.JMeter.JMeterMirrorsManager] Parsing mirrors...
+[2023-09-08 17:44:05,966 DEBUG Engine.jmeter.JMeter.JMeterMirrorsManager] Total mirrors: 3
+[2023-09-08 17:44:05,966 INFO Engine.jmeter.JMeter] Downloading: https://dlcdn.apache.org//jmeter/binaries/apache-jmeter-5.5.zip
+[2023-09-08 17:44:05,966 DEBUG root] No progressbar for non-tty output: <_io.TextIOWrapper name='<stdout>' mode='w' encoding='utf-8'>
+[2023-09-08 17:44:05,967 DEBUG urllib3.connectionpool] Starting new HTTPS connection (1): dlcdn.apache.org:443
+[2023-09-08 17:44:09,456 DEBUG urllib3.connectionpool] https://dlcdn.apache.org:443 "GET //jmeter/binaries/apache-jmeter-5.5.zip HTTP/1.1" 200 88961114
+[2023-09-08 17:44:10,402 INFO Engine.jmeter.JMeter] Unzipping /tmp/tmpypylrq3t.zip to /root/.bzt/jmeter-taurus/5.5
+[2023-09-08 17:44:10,402 DEBUG root] Extracting /tmp/tmpypylrq3t.zip to /root/.bzt/jmeter-taurus/5.5
+[2023-09-08 17:44:10,438 WARNING root] Keyboard interrupt
+[2023-09-08 17:44:10,440 DEBUG root] KeyboardInterrupt: 
+  File "/usr/local/lib/python3.11/site-packages/bzt/cli.py", line 275, in perform
+    self.engine.prepare()
+  File "/usr/local/lib/python3.11/site-packages/bzt/engine/engine.py", line 220, in prepare
+    self.__prepare_provisioning()
+  File "/usr/local/lib/python3.11/site-packages/bzt/engine/engine.py", line 635, in __prepare_provisioning
+    self.provisioning.prepare()
+  File "/usr/local/lib/python3.11/site-packages/bzt/modules/provisioning.py", line 72, in prepare
+    executor.prepare()
+  File "/usr/local/lib/python3.11/site-packages/bzt/modules/jmeter.py", line 257, in prepare
+    self.install_required_tools()
+  File "/usr/local/lib/python3.11/site-packages/bzt/modules/jmeter.py", line 814, in install_required_tools
+    tool.install()
+  File "/usr/local/lib/python3.11/site-packages/bzt/modules/jmeter.py", line 1639, in install
+    self.__install_jmeter(jmeter_dir)
+  File "/usr/local/lib/python3.11/site-packages/bzt/modules/jmeter.py", line 1517, in __install_jmeter
+    unzip(jmeter_dist, dest, 'apache-jmeter-%s' % self.version)
+  File "/usr/local/lib/python3.11/site-packages/bzt/utils.py", line 999, in unzip
+    with zipfile.ZipFile(source_filename) as zfd:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/zipfile.py", line 1302, in __init__
+    self._RealGetContents()
+  File "/usr/local/lib/python3.11/zipfile.py", line 1411, in _RealGetContents
+    x = ZipInfo(filename)
+        ^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/zipfile.py", line 377, in __init__
+    null_byte = filename.find(chr(0))
+                ^^^^^^^^^^^^^^^^^^^^^
+[2023-09-08 17:44:10,440 INFO Engine] Post-processing...
+[2023-09-08 17:44:10,440 DEBUG Engine.local] Post-process jmeter/jmeter
+[2023-09-08 17:44:10,440 DEBUG Engine] Add existing artifact (move=True): 
+[2023-09-08 17:44:10,440 WARNING Engine] Artifact file not exists: 
+[2023-09-08 17:44:10,440 DEBUG Engine.local] Post-process selenium/139658379192720
+[2023-09-08 17:44:10,441 DEBUG Engine.local] Exception in post_process of SeleniumExecutor: 'NoneType' object has no attribute 'post_process' Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/bzt/modules/provisioning.py", line 159, in post_process
+    executor.post_process()
+  File "/usr/local/lib/python3.11/site-packages/bzt/modules/_selenium.py", line 197, in post_process
+    self.runner.post_process()
+    ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'post_process'
+
+[2023-09-08 17:44:10,441 DEBUG Engine] post_process: 'NoneType' object has no attribute 'post_process'
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/bzt/engine/engine.py", line 356, in post_process
+    module.post_process()
+  File "/usr/local/lib/python3.11/site-packages/bzt/modules/provisioning.py", line 174, in post_process
+    reraise(exc_info, exc_value)
+  File "/usr/local/lib/python3.11/site-packages/bzt/utils.py", line 107, in reraise
+    raise exc
+  File "/usr/local/lib/python3.11/site-packages/bzt/modules/provisioning.py", line 159, in post_process
+    executor.post_process()
+  File "/usr/local/lib/python3.11/site-packages/bzt/modules/_selenium.py", line 197, in post_process
+    self.runner.post_process()
+    ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'post_process'
+
+[2023-09-08 17:44:10,441 DEBUG Engine.consolidator] Consolidator buffer[0]: dict_keys([])
+[2023-09-08 17:44:10,441 INFO Engine.shellexec.Task] Starting shell command: python util/analytics/analytics.py jira
+[2023-09-08 17:44:10,442 DEBUG root] Executing shell: python util/analytics/analytics.py jira at /dc-app-performance-toolkit/app
+[2023-09-08 17:44:10,825 DEBUG Engine] post_process: 
+[2023-09-08 17:44:10,827 DEBUG Engine.Configuration] Dumping YAML config into /dc-app-performance-toolkit/app/results/jira/2023-09-08_17-43-59/effective.yml
+[2023-09-08 17:44:10,838 DEBUG Engine.Configuration] Dumping JSON config into /dc-app-performance-toolkit/app/results/jira/2023-09-08_17-43-59/effective.json
+[2023-09-08 17:44:10,839 DEBUG root] AttributeError: 'NoneType' object has no attribute 'post_process'
+  File "/usr/local/lib/python3.11/site-packages/bzt/cli.py", line 283, in perform
+    self.engine.post_process()
+  File "/usr/local/lib/python3.11/site-packages/bzt/engine/engine.py", line 370, in post_process
+    reraise(exc_info, exc_value)
+  File "/usr/local/lib/python3.11/site-packages/bzt/utils.py", line 107, in reraise
+    raise exc
+  File "/usr/local/lib/python3.11/site-packages/bzt/engine/engine.py", line 356, in post_process
+    module.post_process()
+  File "/usr/local/lib/python3.11/site-packages/bzt/modules/provisioning.py", line 174, in post_process
+    reraise(exc_info, exc_value)
+  File "/usr/local/lib/python3.11/site-packages/bzt/utils.py", line 107, in reraise
+    raise exc
+  File "/usr/local/lib/python3.11/site-packages/bzt/modules/provisioning.py", line 159, in post_process
+    executor.post_process()
+  File "/usr/local/lib/python3.11/site-packages/bzt/modules/_selenium.py", line 197, in post_process
+    self.runner.post_process()
+    ^^^^^^^^^^^^^^^^^^^^^^^^
+[2023-09-08 17:44:10,839 INFO root] Artifacts dir: /dc-app-performance-toolkit/app/results/jira/2023-09-08_17-43-59
+[2023-09-08 17:44:10,839 WARNING root] Done performing with code: 1
+[2023-09-08 17:44:10,839 DEBUG root] Closing log handler: /dc-app-performance-toolkit/app/results/jira/2023-09-08_17-43-59/bzt.log
