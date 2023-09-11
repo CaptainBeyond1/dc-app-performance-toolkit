@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testResults version="1.2">
+<sample t="59358" lt="0" ts="1694438509010" s="false" lb="jmeter_intento_translate" rc="504" rm="Number of samples in transaction : 1, number of failing samples : 1" tn="Jira 1-158" dt="" de="" by="75" ng="200" na="200">
+  <httpSample t="59358" lt="59358" ts="1694438509010" s="false" lb="GET /app/get_endpoing" rc="504" rm="GATEWAY_TIMEOUT" tn="Jira 1-158" dt="" de="" by="75" ng="200" na="200">
+    <assertionResult>
+      <name>assertion after GET request</name>
+      <failure>true</failure>
+      <error>false</error>
+      <failureMessage>Test failed: code expected to contain /200/</failureMessage>
+    </assertionResult>
+    <responseHeader class="java.lang.String">HTTP/1.1 504 GATEWAY_TIMEOUT
+Content-Length: 0
+Connection: keep-alive
+</responseHeader>
+    <requestHeader class="java.lang.String">Connection: keep-alive
+Origin: http://aad63f5796d894a1891759a1b6c9b0ba-854575153.us-east-2.elb.amazonaws.com:80
+Host: aad63f5796d894a1891759a1b6c9b0ba-854575153.us-east-2.elb.amazonaws.com
+User-Agent: Apache-HttpClient/4.5.13 (Java/11.0.20)
+</requestHeader>
+    <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+    <cookies class="java.lang.String">INGRESSCOOKIE=8a2713134403f83e7ffe6454fca9f93f|a4aa6a3e497c70fb8ce2ddf4dcc8ec5d; JSESSIONID=B4F4CA450685971BCD4F51FD43B56985; atlassian.xsrf.token=BCWY-XMNP-PEH6-UHNH_79a99dd71dc289277e676b26745dcb0f537c3c98_lin</cookies>
+    <method class="java.lang.String">GET</method>
+    <queryString class="java.lang.String"></queryString>
+    <java.net.URL>http://aad63f5796d894a1891759a1b6c9b0ba-854575153.us-east-2.elb.amazonaws.com/jira/rest/intento/1.0/translation/issue/10470/926990</java.net.URL>
+  </httpSample>
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String"></requestHeader>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+</sample>
+
+</testResults>
