@@ -37,6 +37,28 @@ def app_specific_action(webdriver, datasets):
             actions.send_keys(Keys.ENTER)
             actions.perform()
             page.wait_until_visible((By.ID, "depSummary"))
+<<<<<<< HEAD
+        sub_measure()
+
+        @print_timing("selenium_app_custom_action:view_charts")
+        def sub_measure():
+            page.wait_until_visible((By.ID, "buttonDepRing"))
+            page.get_element((By.ID, "buttonDepRing")).click()
+            page.wait_until_visible((By.ID, "ringChart"))
+            page.get_element((By.ID, "buttonDepTimeline")).click()
+            page.wait_until_visible((By.ID, "timelineChart"))
+            page.get_element((By.ID, "buttonDepSankey")).click()
+            page.wait_until_visible((By.ID, "sankeyChart"))
+            page.get_element((By.ID, "buttonDepHeatmap")).click()
+            page.wait_until_visible((By.ID, "tableChart"))
+            page.get_element((By.ID, "buttonDepForce")).click()
+            page.wait_until_visible((By.ID, "forceChart"))
+            page.get_element((By.ID, "buttonDepSpider")).click()
+            page.wait_until_visible((By.ID, "spiderChart"))
+            page.get_element((By.ID, "buttonDepTimeToResolve")).click()
+            page.wait_until_visible((By.ID, "timeToResolveChart"))
+=======
+>>>>>>> a09d52f4835d55cae4ff760fed2fd32fac486885
         sub_measure()
 
         @print_timing("selenium_app_custom_action:view_charts")
@@ -58,4 +80,3 @@ def app_specific_action(webdriver, datasets):
             page.wait_until_visible((By.ID, "timeToResolveChart"))
         sub_measure()
     measure()
-
