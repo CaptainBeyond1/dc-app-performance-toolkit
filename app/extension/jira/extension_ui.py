@@ -31,6 +31,7 @@ def app_specific_action(webdriver, datasets):
             time.sleep(1)
             jql.send_keys('project=TEST')
             time.sleep(1)
+            webdriver.save_screenshot("beforeenter.png")
             jql.send_keys(Keys.ENTER)
             webdriver.save_screenshot("awaitfordepSummary.png")
             page.wait_until_visible((By.ID, "depSummary"))
