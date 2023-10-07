@@ -22,13 +22,16 @@ def app_specific_action(webdriver, datasets):
         def sub_measure():
             page.go_to_url(f"{JIRA_SETTINGS.server_url}/plugins/servlet/dependencymapper")
             time.sleep(2)
+            driver.save_screenshot("awaitforinputvisible.png")
             page.wait_until_visible((By.ID, "jqlInput"))
             time.sleep(1)
+            driver.save_screenshot("awaitforinput.png")
             jql = page.get_element((By.ID, "jqlInput"))
             time.sleep(1)
             jql.clear()
             jql.send_keys('project=TEST')
             jql.send_keys(Keys.ENTER)
+            driver.save_screenshot("awaitfordepSummary.png")
             page.wait_until_visible((By.ID, "depSummary"))
         sub_measure()
 
