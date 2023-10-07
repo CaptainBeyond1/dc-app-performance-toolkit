@@ -21,7 +21,6 @@ def app_specific_action(webdriver, datasets):
         @print_timing("selenium_app_custom_action:create_chart")
         def sub_measure():
             page.go_to_url(f"{JIRA_SETTINGS.server_url}/plugins/servlet/dependencymapper")
-            time.sleep(2)
             webdriver.save_screenshot("awaitforinputvisible.png")
             page.wait_until_visible((By.ID, "jqlInput"))
             time.sleep(1)
@@ -29,7 +28,9 @@ def app_specific_action(webdriver, datasets):
             jql = page.get_element((By.ID, "jqlInput"))
             time.sleep(1)
             jql.clear()
+            time.sleep(1)
             jql.send_keys('project=TEST')
+            time.sleep(1)
             jql.send_keys(Keys.ENTER)
             webdriver.save_screenshot("awaitfordepSummary.png")
             page.wait_until_visible((By.ID, "depSummary"))
