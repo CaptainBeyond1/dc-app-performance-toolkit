@@ -31,13 +31,13 @@ def app_specific_action(webdriver, datasets):
         @print_timing("selenium_app_custom_action:visit_topic")
         def sub_measure():
             page.go_to_url(f"{CONFLUENCE_SETTINGS.server_url}/display/FT/Topic+1")
-            page.wait_until_visible((By.ID, "easyForumsTable"))
+            page.wait_until_visible((By.ID, "title-text"))
         sub_measure()
 
         @print_timing("selenium_app_custom_action:create_post")
         def sub_measure():
             page.go_to_url(f"{CONFLUENCE_SETTINGS.server_url}/display/FT/Topic+1")
-            page.wait_until_visible((By.ID, "easyForumsTable"))
+            page.wait_until_visible((By.ID, "title-text"))
             page.wait_until_visible((By.CLASS_NAME, "quick-comment-prompt"))
             comment_prompt = page.get_element((By.CLASS_NAME, "quick-comment-prompt"))
             comment_prompt.click()
