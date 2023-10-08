@@ -42,7 +42,7 @@ def app_specific_action(webdriver, datasets):
             comment_prompt = page.get_element((By.CLASS_NAME, "quick-comment-prompt"))
             comment_prompt.click()
             page.wait_until_visible((By.ID, "rte"))
-            input_comment = page.get_element((By.CLASS_NAME, "rte"))
+            input_comment = page.get_element((By.ID, "rte"))
             input_comment.click()
             input_comment.send_keys('Hey everyone, I just wanted to share a quick update on our project progress. Weve made significant strides in the past week, and Im excited to report that weve successfully completed the first phase of development ahead of schedule!')
             save_button = page.get_element((By.ID, "rte-button-publish"))
