@@ -5,6 +5,7 @@ from selenium.webdriver.common.by import By
 from selenium_ui.base_page import BasePage
 from selenium_ui.conftest import print_timing
 from selenium_ui.jira.pages.pages import Login
+from selenium.webdriver.common.alert import Alert
 from util.conf import JIRA_SETTINGS
 
 
@@ -34,11 +35,19 @@ def app_specific_action(webdriver, datasets):
 
     @print_timing("selenium_app_custom_action")
     def measure():
-        @print_timing("selenium_app_custom_action:view_issue")
+        @print_timing("selenium_app_custom_action:view_page")
         def sub_measure():
-            page.go_to_url(f"{JIRA_SETTINGS.server_url}/browse/{issue_key}")
-            page.wait_until_visible((By.ID, "summary-val"))  # Wait for summary field visible
-            page.wait_until_visible((By.ID, "ID_OF_YOUR_APP_SPECIFIC_UI_ELEMENT"))  # Wait for you app-specific UI element by ID selector
+            page.go_to_url(f"{JIRA_SETTINGS.server_url}/secure/FlowerBpm.jspa?p=repository")
+            page.wait_until_visible((By.CLASS_NAME, "flower-logo-primary"))  # Wait for icon visible
+        sub_measure()
+
+        @print_timing("selenium_app_custom_action:import_model")
+        def sub_measure():
+            import_button = page.get_element((By.XPATH, "/html/body/div[1]/div/div/div/div/div/div[4]/div[1]/div[2]/div/div[1]/button"))
+            import_button.click()
+            alert = Alert(webdriver)
+            alert.accept()
+            page.wait_until_visible((By.CLASS_NAME, "flower-logo-primary"))  # Wait for icon visible
         sub_measure()
     measure()
 
