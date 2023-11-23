@@ -43,7 +43,7 @@ def app_specific_action(webdriver, datasets):
 
         @print_timing("selenium_app_custom_action:import_model")
         def sub_measure():
-            import_button = page.get_element((By.CSS_SELECTOR, "#page > div:nth-child(7) > div:nth-child(1) > div.card-footer > div > div:nth-child(1) > button"))
+            import_button = page.get_element((By.CSS_SELECTOR, "[test-id='btn-editmodel-BPMN-429']"))
             import_button.click()
             alert = Alert(webdriver)
             alert.accept()
