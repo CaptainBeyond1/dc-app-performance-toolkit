@@ -43,7 +43,7 @@ def app_specific_action(webdriver, datasets):
 
         @print_timing("selenium_app_custom_action:import_model")
         def sub_measure():
-            import_button = page.get_element((By.XPATH, "/html/body/div[1]/div/div/div/div/div/div[4]/div[1]/div[2]/div/div[1]/button"))
+            import_button = page.get_element((By.XPATH, "//*[@id="page"]/div[4]/div[1]/div[2]/div/div[1]/button/span"))
             import_button.click()
             alert = Alert(webdriver)
             alert.accept()
