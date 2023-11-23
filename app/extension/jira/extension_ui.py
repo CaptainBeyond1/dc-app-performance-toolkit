@@ -38,7 +38,7 @@ def app_specific_action(webdriver, datasets):
         @print_timing("selenium_app_custom_action:view_page")
         def sub_measure():
             page.go_to_url(f"{JIRA_SETTINGS.server_url}/secure/FlowerBpm.jspa?p=repository")
-            page.wait_until_visible((By.CLASS_NAME, "flower-logo-primary"))  # Wait for icon visible
+            page.wait_until_visible((By.ID, "page"))  # Wait for page visible
         sub_measure()
 
         @print_timing("selenium_app_custom_action:import_model")
@@ -47,7 +47,7 @@ def app_specific_action(webdriver, datasets):
             import_button.click()
             alert = Alert(webdriver)
             alert.accept()
-            page.wait_until_visible((By.CLASS_NAME, "flower-logo-primary"))  # Wait for icon visible
+            page.wait_until_visible((By.ID, "page"))  # Wait for icon visible
         sub_measure()
     measure()
 
