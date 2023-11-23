@@ -39,15 +39,21 @@ def app_specific_action(webdriver, datasets):
         def sub_measure():
             page.go_to_url(f"{JIRA_SETTINGS.server_url}/secure/FlowerBpm.jspa?p=repository")
             page.wait_until_visible((By.ID, "page"))  # Wait for page visible
-        sub_measure()
-
-        @print_timing("selenium_app_custom_action:import_model")
-        def sub_measure():
+            page.wait_until_visible((By.CSS_SELECTOR, "button[test-id='btn-editmodel-BPMN-429']"))
             import_button = page.get_element((By.CSS_SELECTOR, "button[test-id='btn-editmodel-BPMN-429']"))
             import_button.click()
-            # alert = Alert(webdriver)
-            # alert.accept()
-            # page.wait_until_visible((By.ID, "page"))  # Wait for icon visible
+            alert = Alert(webdriver)
+            alert.accept()
+            page.wait_until_visible((By.ID, "page"))  # Wait for icon visible
         sub_measure()
+
+        # @print_timing("selenium_app_custom_action:import_model")
+        # def sub_measure():
+        #     import_button = page.get_element((By.CSS_SELECTOR, "button[test-id='btn-editmodel-BPMN-429']"))
+        #     import_button.click()
+        #     alert = Alert(webdriver)
+        #     alert.accept()
+        #     page.wait_until_visible((By.ID, "page"))  # Wait for icon visible
+        # sub_measure()
     measure()
 
