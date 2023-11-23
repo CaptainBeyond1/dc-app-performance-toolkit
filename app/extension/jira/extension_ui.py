@@ -39,11 +39,24 @@ def app_specific_action(webdriver, datasets):
         def sub_measure():
             page.go_to_url(f"{JIRA_SETTINGS.server_url}/secure/FlowerBpm.jspa?p=repository")
             page.wait_until_visible((By.ID, "page"))  # Wait for page visible
-            page.wait_until_visible((By.XPATH, "//button[@test-id='btn-editmodel-BPMN-429']"))
-            import_button = page.get_element((By.XPATH, "//button[@test-id='btn-editmodel-BPMN-429']"))
-            import_button.click()
-            alert = Alert(webdriver)
-            alert.accept()
+
+            card_decks = page.get_elements((By.CLASS_NAME, "card-deck"))
+
+            if len(card_decks) >= 2:
+                # Get the second "card-deck" element
+                second_card_deck = card_decks[1]
+
+                # Find the first button in the second "card-deck"
+                button_in_second_card_deck = second_card_deck.get_element((By.CSS_SELECTOR, "button[test-id='btn-editmodel-BPMN-429']"))
+
+                # Click on the desired button
+                button_in_second_card_deck.click()
+
+                alert = Alert(webdriver)
+
+                alert.accept()
+            
+            
             page.wait_until_visible((By.ID, "page"))  # Wait for page visible
         sub_measure()
 
