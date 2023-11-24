@@ -40,7 +40,7 @@ def app_specific_action(webdriver, datasets):
             page.go_to_url(f"{JIRA_SETTINGS.server_url}/secure/FlowerBpm.jspa?p=repository")
             page.wait_until_visible((By.ID, "page"))  # Wait for page visible
 
-            card_decks = page.get_elements((By.CLASS_NAME, "card-deck"))
+            card_decks = webdriver.find_elements(By.CLASS_NAME, "card-deck")
 
             if len(card_decks) >= 2:
                 # Get the second "card-deck" element
