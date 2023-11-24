@@ -38,7 +38,7 @@ def app_specific_action(webdriver, datasets):
         @print_timing("selenium_app_custom_action:view_page")
         def sub_measure():
             page.go_to_url(f"{JIRA_SETTINGS.server_url}/secure/FlowerBpm.jspa?p=repository")
-            page.wait_until_visible((By.ID, "page"))  # Wait for page visible
+            page.wait_until_visible((By.CLASS_NAME, "flower-logo-primary"))  # Wait for page visible
 
             # card_decks = driver.find_elements(By.CLASS_NAME, "card-deck")
 
