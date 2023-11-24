@@ -18,20 +18,20 @@ def app_specific_action(webdriver, datasets):
     # NOTE: If app_specific_action is running as specific user, make sure that app_specific_action is running
     # just before test_2_selenium_z_log_out action
     #
-    # @print_timing("selenium_app_specific_user_login")
-    # def measure():
-    #     def app_specific_user_login(username='admin', password='admin'):
-    #         login_page = Login(webdriver)
-    #         login_page.delete_all_cookies()
-    #         login_page.go_to()
-    #         login_page.set_credentials(username=username, password=password)
-    #         if login_page.is_first_login():
-    #             login_page.first_login_setup()
-    #         if login_page.is_first_login_second_page():
-    #             login_page.first_login_second_page_setup()
-    #         login_page.wait_for_page_loaded()
-    #     app_specific_user_login(username='admin', password='admin')
-    # measure()
+    @print_timing("selenium_app_specific_user_login")
+    def measure():
+        def app_specific_user_login(username='admin', password='admin'):
+            login_page = Login(webdriver)
+            login_page.delete_all_cookies()
+            login_page.go_to()
+            login_page.set_credentials(username=username, password=password)
+            if login_page.is_first_login():
+                login_page.first_login_setup()
+            if login_page.is_first_login_second_page():
+                login_page.first_login_second_page_setup()
+            login_page.wait_for_page_loaded()
+        app_specific_user_login(username='admin', password='admin')
+    measure()
 
     @print_timing("selenium_app_custom_action")
     def measure():
@@ -40,33 +40,33 @@ def app_specific_action(webdriver, datasets):
             page.go_to_url(f"{JIRA_SETTINGS.server_url}/secure/FlowerBpm.jspa?p=repository")
             page.wait_until_visible((By.ID, "page"))  # Wait for page visible
 
-            card_decks = webdriver.find_elements(By.CLASS_NAME, "card-deck")
+            # card_decks = driver.find_elements(By.CLASS_NAME, "card-deck")
 
-            if len(card_decks) >= 2:
-                # Get the second "card-deck" element
-                second_card_deck = card_decks[1]
+            # if len(card_decks) >= 2:
+            #     # Get the second "card-deck" element
+            #     second_card_deck = card_decks[1]
 
-                # Find the first button in the second "card-deck"
-                button_in_second_card_deck = second_card_deck.get_element((By.CSS_SELECTOR, "button[test-id='btn-editmodel-BPMN-429']"))
+            #     # Find the first button in the second "card-deck"
+            #     button_in_second_card_deck = second_card_deck.get_element((By.CSS_SELECTOR, "button[test-id='btn-editmodel-BPMN-429']"))
 
-                # Click on the desired button
-                button_in_second_card_deck.click()
+            #     # Click on the desired button
+            #     button_in_second_card_deck.click()
 
-                alert = Alert(webdriver)
+            #     alert = Alert(webdriver)
 
-                alert.accept()
+            #     alert.accept()
             
             
-            page.wait_until_visible((By.ID, "page"))  # Wait for page visible
+            # page.wait_until_visible((By.ID, "page"))  # Wait for page visible
         sub_measure()
 
-        # @print_timing("selenium_app_custom_action:import_model")
-        # def sub_measure():
-        #     import_button = page.get_element((By.CSS_SELECTOR, "button[test-id='btn-editmodel-BPMN-429']"))
-        #     import_button.click()
-        #     alert = Alert(webdriver)
-        #     alert.accept()
-        #     page.wait_until_visible((By.ID, "page"))  # Wait for icon visible
-        # sub_measure()
+        @print_timing("selenium_app_custom_action:import_model")
+        def sub_measure():
+            import_button = page.get_element((By.CSS_SELECTOR, "button[test-id='btn-editmodel-BPMN-429']"))
+            import_button.click()
+            alert = Alert(webdriver)
+            alert.accept()
+            page.wait_until_visible((By.ID, "page"))  # Wait for icon visible
+        sub_measure()
     measure()
 
