@@ -1,7 +1,8 @@
 import random
+import time
 
 from selenium.webdriver.common.by import By
-
+from selenium.common.exceptions import UnexpectedAlertPresentException
 from selenium_ui.base_page import BasePage
 from selenium_ui.conftest import print_timing
 from selenium_ui.jira.pages.pages import Login
@@ -38,34 +39,40 @@ def app_specific_action(webdriver, datasets):
         @print_timing("selenium_app_custom_action:view_page")
         def sub_measure():
             page.go_to_url(f"{JIRA_SETTINGS.server_url}/secure/FlowerBpm.jspa?p=repository")
-            page.wait_until_visible((By.CLASS_NAME, "flower-logo-primary"))  # Wait for page visible
 
-            # card_decks = driver.find_elements(By.CLASS_NAME, "card-deck")
+            webdriver.save_screenshot("1.png")
 
-            # if len(card_decks) >= 2:
-            #     # Get the second "card-deck" element
-            #     second_card_deck = card_decks[1]
+            iframe = page.wait_until_visible((By.ID, "bit-iframe01"))  # Wait for page visible
+            iframe = page.get_element((By.ID, "bit-iframe01"))  # Wait for page visible
 
-            #     # Find the first button in the second "card-deck"
-            #     button_in_second_card_deck = second_card_deck.get_element((By.CSS_SELECTOR, "button[test-id='btn-editmodel-BPMN-429']"))
+            webdriver.switch_to.frame(iframe)
 
-            #     # Click on the desired button
-            #     button_in_second_card_deck.click()
+            webdriver.save_screenshot("2.png")
 
-            #     alert = Alert(webdriver)
+            card_decks = webdriver.find_elements(By.CLASS_NAME, "card-deck")
 
-            #     alert.accept()
-            
-            
-            # page.wait_until_visible((By.ID, "page"))  # Wait for page visible
+            if len(card_decks) >= 2:
+                # Get the second "card-deck" element
+                second_card_deck = card_decks[1]
+
+                webdriver.save_screenshot("3.png")
+
         sub_measure()
 
         @print_timing("selenium_app_custom_action:import_model")
         def sub_measure():
+            page.wait_until_visible((By.CSS_SELECTOR, "button[test-id='btn-editmodel-BPMN-429']"))
             import_button = page.get_element((By.CSS_SELECTOR, "button[test-id='btn-editmodel-BPMN-429']"))
             import_button.click()
-            alert = Alert(webdriver)
-            alert.accept()
+            
+            try:
+                # Try to handle the unexpected alert
+                alert = Alert(webdriver)
+                alert.accept()
+            except UnexpectedAlertPresentException:
+                # Handle the exception (log, report, etc.)
+                print("Unexpected alert present. Handling it.")
+
             page.wait_until_visible((By.ID, "page"))  # Wait for icon visible
         sub_measure()
     measure()
