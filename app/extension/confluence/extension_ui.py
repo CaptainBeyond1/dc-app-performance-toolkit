@@ -24,7 +24,7 @@ def app_specific_action(webdriver, datasets):
         def sub_measure():
             specific_edit_page = Page(webdriver, page_id=datasets['custom_page_id'])
             specific_edit_page.wait_until_visible((By.ID, "navi-next-step"))
-            next_step_button = webdriver.find_element_by_id("navi-next-step")
+            next_step_button = specific_edit_page.get_element((By.ID, "navi-next-step"))
             actions.move_to_element(next_step_button)
             actions.click()
             actions.perform()
@@ -32,7 +32,7 @@ def app_specific_action(webdriver, datasets):
         @print_timing("selenium_app_custom_action:next_page_click")
         def sub_measure():
             specific_edit_page.wait_until_visible((By.ID, "navi-next-page"))
-            next_page_button = webdriver.find_element_by_id("navi-next-page")
+            next_page_button = specific_edit_page.get_element((By.ID, "navi-next-page"))
             actions.move_to_element(next_page_button)
             actions.click()
             actions.perform()
