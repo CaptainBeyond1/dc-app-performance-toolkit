@@ -33,7 +33,7 @@ def app_specific_action(webdriver, datasets):
 
     @print_timing("selenium_app_custom_action")
     def measure():
-        @print_timing("selenium_app_custom_action:view_issue")
+        @print_timing("selenium_app_custom_action:create_request")
         def sub_measure():
             actions = ActionChains(webdriver)
             page.go_to_url(f"{JIRA_SETTINGS.server_url}/secure/CallViewAction.jspa?reporter=admin&testfield={testfieldValue}")
